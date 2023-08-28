@@ -1,0 +1,104 @@
+
+img {
+    display: block;
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+  }
+  
+  .ninja1:hover {
+    transform: translateY(50px);
+  }
+  
+  .ninja2:hover {
+    transform: scale(3); /*scale: resizes an element */
+  }
+  
+  .ninja3:hover {
+    transform: rotate(270deg);
+  }
+
+  .ninja1, .ninja2, .ninja3 {
+    transition-property: transform;
+    transition-duration: 2s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 1s;
+  }
+
+  @keyframes weirdAnim {
+    0% { transform: translateY(0); }
+    11% { 
+      width: 50px;
+      background-color: green; 
+      transform: rotate(90deg);
+    }
+    50% { height: 100px;}
+    66% { transform: rotate(-720deg); }
+    99% { 
+      border-radius: 200px;
+      background-color: black;
+    }
+    100% { 
+      background-color: red;
+    }
+  }
+
+  .ninja1{
+    animation-name: weirdAnim;
+    animation-duration: 5s;
+  }
+
+  .ninja1{
+    animation: weirdAnim 5s;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .container {
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .textWrapper {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    font-size: xx-large;
+    background: rgba(255, 240, 240, 0.884);
+  }
+  
+  .text {
+    color: rgb(98, 98, 98);
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: 0.1rem;
+    font-weight: bold;
+    animation: translateText 3s linear infinite;
+  }
+  
+  @keyframes translateText {
+    0% {
+      transform: translateX(100%);
+    }
+    20% {
+      transform: translateX(0%);
+    }
+    25% {
+      transform: translateX(10%);
+    }
+    80% {
+      transform: translateX(10%);
+    }
+    85% {
+      transform: translateX(20%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
